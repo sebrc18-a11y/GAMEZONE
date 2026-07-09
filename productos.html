@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" href="IMAGENES/Icono.png" type="image/x-icon">
+    <title>PRODUCTOS - GAMEZONE</title>
+</head>
+
+<body>
+    <header class="encabezado">
+        <nav class="nav">
+            <div class="logo">
+                <img src="IMAGENES/Logo.png" alt="Logo de la página">
+            </div>
+            <div class="menu">
+                <ul class="menu-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a class="activo" href="productos.html">Productos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-productos">
+        <section class="seccion-tienda">
+            <aside class="filtros">
+                <h5 class="titulo-filtros">FILTROS</h5>
+                <div class="grupo-filtro">
+                    <h6>BUSCAR JUEGO</h6>
+                    <input type="text" id="buscador" class="input-buscador" placeholder="Escribe el título...">
+                </div>
+                <div class="grupo-filtro">
+                    <h6>PLATAFORMAS</h6>
+                    <label class="opcion-checkbox">
+                        <input type="checkbox" class="filtro-plataforma" value="PS5" checked>
+                        <span class="checkbox-custom"></span>
+                        PlayStation 5
+                    </label>
+                    <label class="opcion-checkbox">
+                        <input type="checkbox" class="filtro-plataforma" value="XBOX" checked>
+                        <span class="checkbox-custom"></span>
+                        Xbox Series
+                    </label>
+                    <label class="opcion-checkbox">
+                        <input type="checkbox" class="filtro-plataforma" value="NINTENDO" checked>
+                        <span class="checkbox-custom"></span>
+                        Nintendo Switch 2
+                    </label>
+                </div>
+            </aside>
+
+            <div class="catalogo-productos">
+                <div class="grid-productos" id="gridProductos">
+                    <div class="mensaje-vacio" id="mensajeVacio">
+                        <p>No se encontraron videojuegos con los criterios seleccionados.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GameZone Store S.A.C. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
