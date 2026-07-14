@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet/less" type="text/css" href="styles.less" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap"
-        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="icon" href="IMAGENES/Icono.png" type="image/x-icon">
     <title>PRODUCTOS - GAMEZONE</title>
 </head>
-
 <body>
     <header class="encabezado">
-        <nav class="nav">
+        <nav class="nav w-[90%] min-h-[90px] mx-auto flex justify-between items-center">
             <div class="logo">
                 <img src="IMAGENES/Logo.png" alt="Logo de la página">
             </div>
@@ -26,10 +23,9 @@
             </div>
         </nav>
     </header>
-
     <main id="main-productos">
         <section class="seccion-tienda">
-            <aside class="filtros">
+            <aside class="filtros p-[25px] h-fit">
                 <h5 class="titulo-filtros">FILTROS</h5>
                 <div class="grupo-filtro">
                     <h6>BUSCAR JUEGO</h6>
@@ -54,7 +50,6 @@
                     </label>
                 </div>
             </aside>
-
             <div class="catalogo-productos">
                 <div class="grid-productos" id="gridProductos">
                     <div class="mensaje-vacio" id="mensajeVacio">
@@ -64,13 +59,10 @@
             </div>
         </section>
     </main>
-
     <footer>
         <p>&copy; 2026 GameZone Store S.A.C. Todos los derechos reservados.</p>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/less"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
