@@ -1,22 +1,27 @@
 @color-primario: #39ff14;
 @color-secundario: #121212;
 @color-terciario: #1e1e1e;
-
 @texto: #fff;
 @texto-secundario: #b0b0b0;
 @radio: 15px;
 @transicion: 0.3s;
 
+.efecto-hover-tarjeta(@elevacion: -10px, @sombra: rgba(0, 0, 0, 0.55)) {
+    transform: translateY(@elevacion);
+    border-color: @color-primario;
+    box-shadow: 0 20px 45px @sombra;
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: @color-secundario;
-  color: @texto;
-  font-family: "Inter", sans-serif;
+    background: @color-secundario;
+    color: @texto;
+    font-family: "Inter", sans-serif;
 }
 
 h1,
@@ -25,439 +30,415 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 700;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
 }
 
 p {
-  color: @texto-secundario;
-  line-height: 1.7;
-}
-a {
-  text-decoration: none;
-  transition: @transicion;
+    color: @texto-secundario;
+    line-height: 1.7;
 }
 
-// Pagina Inicio y Contacto
+a {
+    text-decoration: none;
+    transition: @transicion;
+}
 
 .encabezado {
-  width: 100%;
-  background: @color-secundario;
-  border-bottom: 1px solid fade(@color-primario, 20%);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
-}
-
-.nav {
-  width: 90%;
-  min-height: 90px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    width: 100%;
+    background: @color-secundario;
+    border-bottom: 1px solid fade(@color-primario, 20%);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
 }
 
 .logo img {
-  width: 180px;
-  transition: 0.3s;
+    width: 180px;
+    transition: 0.3s;
 }
+
 .logo img:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .menu-list {
-  list-style: none;
-  display: flex;
-  gap: 35px;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
 }
 
 .menu-list a {
-  color: @texto-secundario;
-  font-weight: 600;
-  font-size: 18px;
-  position: relative;
-  text-decoration: none;
+    color: @texto-secundario;
+    font-weight: 600;
+    font-size: 18px;
+    position: relative;
+    text-decoration: none;
 }
+
 .menu-list a:hover,
 .menu-list .activo {
-  color: @color-primario;
+    color: @color-primario;
 }
+
 .menu-list a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: @color-primario;
-  transition: 0.3s;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: @color-primario;
+    transition: 0.3s;
 }
+
 .menu-list a:hover::after,
 .menu-list .activo::after {
-  width: 100%;
+    width: 100%;
 }
 
 main {
-  background: @color-secundario;
+    background: @color-secundario;
 }
 
 .titulo-carr {
-  font-family: "Space Grotesk", sans-serif;
-  color: #fff;
-  font-size: 3rem;
-}
-.texto-carr {
-  font-family: "Inter", sans-serif;
-  color: #fff;
-  font-size: 1.1rem;
+    font-family: "Space Grotesk", sans-serif;
+    color: #fff;
+    font-size: 3rem;
 }
 
-.productos {
-  width: 90%;
-  margin: 110px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 35px;
+.texto-carr {
+    font-family: "Inter", sans-serif;
+    color: #fff;
+    font-size: 1.1rem;
 }
+
 .texto-prod {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
 }
+
 .texto-prod h2,
 .texto-vid h2,
 .texto-cont h2 {
-  color: @color-primario;
-  font-size: 42px;
-  letter-spacing: 1px;
+    color: @color-primario;
+    font-size: 42px;
+    letter-spacing: 1px;
 }
+
 .card {
-  background: @color-terciario!important;
-  border: 1px solid fade(@color-primario, 25%);
-  border-radius: @radio;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  transition: 0.35s;
+    background: @color-terciario !important;
+    border: 1px solid fade(@color-primario, 25%);
+    border-radius: @radio;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: 0.35s;
 }
+
 .card:hover {
-  transform: translateY(-10px);
-  border-color: @color-primario;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+    .efecto-hover-tarjeta();
 }
+
 .card img {
-  height: 230px;
-  object-fit: cover;
-  transition: 0.4s;
+    height: 230px;
+    object-fit: cover;
+    transition: 0.4s;
 }
+
 .card:hover img {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
+
 .card-body {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 25px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
 }
 
 .card-body h5 {
-  color: @texto;
+    color: @texto;
 }
 
 .card-title {
-  color: @texto;
-  font-family: "Space Grotesk", sans-serif;
+    color: @texto;
+    font-family: "Space Grotesk", sans-serif;
 }
+
 .precio {
-  color: @color-primario;
-  font:
-    700 24px "JetBrains Mono",
-    monospace;
+    color: @color-primario;
+    font: 700 24px "JetBrains Mono", monospace;
 }
 
 .video-seccion {
-  width: 90%;
-  margin: 90px auto;
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  background: @color-terciario;
-  border: 1px solid fade(@color-primario, 20%);
-  border-radius: 20px;
-  padding: 60px;
-}
-.video,
-.texto-vid {
-  flex: 1;
-}
-.video video {
-  width: 100%;
-  border-radius: 15px;
-  border: 2px solid fade(@color-primario, 30%);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+    background: @color-terciario;
+    border: 1px solid fade(@color-primario, 20%);
+    border-radius: 20px;
 }
 
-.contacto {
-  max-width: 800px;
-  margin: 50px auto 0 auto;
-  padding: 0 20px 50px 20px;
-  text-align: center;
+.video,
+.texto-vid {
+    flex: 1;
+}
+
+.video video {
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid fade(@color-primario, 30%);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
 }
 
 .texto-cont {
-  margin-bottom: 30px;
-  h2 {
-    color: @color-primario;
-  }
-  p {
-    color: #b0b0b0;
-    max-width: 600px;
-    margin: 10px auto;
-  }
+    margin-bottom: 30px;
+
+    h2 {
+        color: @color-primario;
+    }
+
+    p {
+        color: #b0b0b0;
+        max-width: 600px;
+        margin: 10px auto;
+    }
 }
 
 .formulario {
-  background: #1a1a1a;
-  padding: 40px;
-  border-radius: 20px;
-  border: 1px solid #333;
-  text-align: left;
-  margin-bottom: 0;
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #333;
+    text-align: left;
+    margin-bottom: 0;
 }
 
 .form-label {
-  color: #fff;
-  display: block;
-  margin-bottom: 8px;
-  margin-top: 15px;
+    color: #fff;
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 15px;
 }
 
 .form-control {
-  width: 100%;
-  background: #252525;
-  color: #fff;
-  border: 1px solid #444;
-  padding: 12px;
-  border-radius: 8px;
-  box-sizing: border-box;
+    width: 100%;
+    background: #252525;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 12px;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
 .boton-enviar {
-  width: 100%;
-  margin-top: 25px;
-  padding: 15px;
-  background: @color-primario;
-  color: #000;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 16px;
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    background: @color-primario;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 footer {
-  width: 100%;
-  min-height: 90px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: darken(@color-secundario, 3%);
-  border-top: 1px solid fade(@color-primario, 20%);
-  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.35);
+    width: 100%;
+    min-height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: darken(@color-secundario, 3%);
+    border-top: 1px solid fade(@color-primario, 20%);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.35);
 }
+
 footer p {
-  margin: 0;
-  color: @texto-secundario;
+    margin: 0;
+    color: @texto-secundario;
 }
 
 // Pagina Productos
-
 .seccion-tienda {
-  width: 90%;
-  margin: 0 auto 60px auto;
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 40px;
-  padding-top: 50px;
+    width: 90%;
+    margin: 0 auto 60px auto;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    padding-top: 50px;
 }
 
 .filtros {
-  background: #161616;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: @radio;
-  padding: 25px;
-  height: fit-content;
+    background: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: @radio;
 
-  .titulo-filtros {
-    font-size: 20px;
-    letter-spacing: 1px;
-    margin-bottom: 25px;
-    color: @texto;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 10px;
-  }
-
-  .grupo-filtro {
-    margin-bottom: 30px;
-
-    h6 {
-      color: @color-primario;
-      font-size: 13px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
+    .titulo-filtros {
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 25px;
+        color: @texto;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 10px;
     }
-  }
+
+    .grupo-filtro {
+        margin-bottom: 30px;
+
+        h6 {
+            color: @color-primario;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+    }
 }
 
 .input-buscador {
-  width: 100%;
-  background: #222;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 12px 16px;
-  border-radius: 8px;
-  color: @texto;
-  outline: none;
-  font-size: 14px;
-  transition: @transicion;
+    width: 100%;
+    background: #222;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: @texto;
+    outline: none;
+    font-size: 14px;
+    transition: @transicion;
 }
 
-// Checkboxes personalizados
 .opcion-checkbox {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-  cursor: pointer;
-  user-select: none;
-  color: @texto-secundario;
-  font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+    color: @texto-secundario;
+    font-size: 15px;
 
-  input {
-    display: none;
+    input {
+        display: none;
 
-    &:checked + .checkbox-custom {
-      border-color: @color-primario;
-      background: @color-primario;
+        &:checked+.checkbox-custom {
+            border-color: @color-primario;
+            background: @color-primario;
 
-      &::after {
-        content: "✓";
-        color: #000;
-        font-size: 12px;
-        font-weight: bold;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+            &::after {
+                content: "✓";
+                color: #000;
+                font-size: 12px;
+                font-weight: bold;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
     }
-  }
 
-  .checkbox-custom {
-    width: 18px;
-    height: 18px;
-    border: 2px solid #444;
-    border-radius: 4px;
-    margin-right: 12px;
-    display: inline-block;
-    position: relative;
-    transition: @transicion;
-  }
+    .checkbox-custom {
+        width: 18px;
+        height: 18px;
+        border: 2px solid #444;
+        border-radius: 4px;
+        margin-right: 12px;
+        display: inline-block;
+        position: relative;
+        transition: @transicion;
+    }
 }
 
 .grid-productos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);  
-  gap: 30px;                              
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 
-  @media (max-width: 991px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    @media (max-width: 991px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;           
-  }
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .grid-productos .card {
-  background: @color-terciario !important;
-  border: 1px solid rgba(57, 255, 20, 0.2);
-  border-radius: 20px;                    
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  transition: @transicion;
-  display: flex;
-  flex-direction: column;                 
-
-  &:hover {
-    transform: translateY(-5px);
-    border-color: @color-primario;
-    box-shadow: 0 20px 45px rgba(57, 255, 20, 0.1);
-
-    .card-img-top {
-      transform: scale(1.03);
-    }
-  }
-
-  .card-img-top {
-    width: 100%;
-    aspect-ratio: 2 / 3;                  
-    object-fit: cover;                    
-    transition: 0.4s;
-  }
-
-  .card-body {
+    background: @color-terciario !important;
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: @transicion;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    gap: 8px;
-    text-align: left;
-    flex: 1;                             
-  }
 
-  .plataformas {
-    font-size: 11px;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.4);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+    &:hover {
+        .efecto-hover-tarjeta(-5px, rgba(57, 255, 20, 0.1));
 
-  .card-title {
-    color: @texto;
-    font-size: 18px;                   
-    font-weight: 700;
-    margin: 0;
-    line-height: 1.3;
-  }
+        .card-img-top {
+            transform: scale(1.03);
+        }
+    }
 
-  .precio {
-    color: @color-primario !important;
-    font: 700 22px 'JetBrains Mono', monospace;
-    margin-top: auto;                  
-    margin-bottom: 0;
-  }
+    .card-img-top {
+        width: 100%;
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
+        transition: 0.4s;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 8px;
+        text-align: left;
+        flex: 1;
+    }
+
+    .plataformas {
+        font-size: 11px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.4);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .card-title {
+        color: @texto;
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    .precio {
+        color: @color-primario !important;
+        font: 700 22px "JetBrains Mono", monospace;
+        margin-top: auto;
+        margin-bottom: 0;
+    }
 }
 
 .mensaje-vacio {
-  grid-column: 1 / -1;
-  background: #161616;
-  border: 1px dashed rgba(255, 255, 255, 0.1);
-  border-radius: @radio;
-  padding: 50px 20px;
-  text-align: center;
-  display: none;
+    grid-column: 1 / -1;
+    background: #161616;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: @radio;
+    padding: 50px 20px;
+    text-align: center;
+    display: none;
 
-  &.visible {
-    display: block;
-  }
+    &.visible {
+        display: block;
+    }
 
-  p {
-    font-size: 18px;
-    color: @texto-secundario;
-    margin-bottom: 0;
-  }
+    p {
+        font-size: 18px;
+        color: @texto-secundario;
+        margin-bottom: 0;
+    }
 }
